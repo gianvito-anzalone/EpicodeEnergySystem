@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>SignUp</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+<body>
+	<div class="container my-3">
+		<div class="row">
+			<div class="col-md-8 mx-auto">
+				<h2>SignUp</h2>
+				<form action="/apihtml/signuphtml" th:object="${signUpRequest}"
+					method="post">
+					<div class="form-row">
+						<div class="col-md-6 form-group">
+							<label>Username</label> <input type="text" name="username"
+								class="form-control" th:field="*{username}">
+						</div>
+						<div class="col-md-6 form-group">
+							<label>Email</label> <input type="text" name="email"
+								class="form-control" th:field="*{email}">
+						</div>
+						<div class="col-md-6 form-group">
+							<label>Password</label> <input type="text" name="password"
+								class="form-control" th:field="*{password}">
+						</div>
+						<div class="col-md-6 form-group">
+							<label>Nome</label> <input type="text" name="nome"
+								class="form-control" th:field="*{nome}">
+						</div>
+						<div class="col-md-6 form-group">
+							<label>Cognome</label> <input type="text" name="cognome"
+								class="form-control" th:field="*{cognome}">
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary btn-block mt-3">Save</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</head>
+<body>
+
+</body>
+</html>

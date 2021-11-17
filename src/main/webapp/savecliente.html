@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Save Cliente</title>
+<link th:rel="stylesheet" th:href="@{webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+	<h1>Salva cliente</h1>
+
+	<form method="post" action="/apiclientehtml/savecliente" th:object="${cliente}">
+		<div>
+			<input name="Nome" th:field="*{ragioneSociale}" placeholder="nome">
+		</div>
+		<div>
+			<input name="partita Iva" th:field="*{partitaIva}" placeholder="partita iva">
+		</div><br>
+		<div>
+			<input name="email" th:field="*{email}" placeholder="email">
+		</div><br>
+		<div>
+			<input name="pec" th:field="*{pec}" placeholder="pec">
+		</div><br>
+		
+		<div>
+			<input name="telefono" th:field="*{telefono}" placeholder="telefono">
+		</div><br>
+		<div>
+			<input name="nome contatto" th:field="*{nomeContatto}" placeholder="nome contatto">
+		</div><br>
+		<div>
+			<input name="cognome Contatto" th:field="*{cognomeContatto}" placeholder="cognome Contatto">
+		</div><br>
+		<div>
+			<input name="telefono Contatto" th:field="*{telefonoContatto}" placeholder="telefono Contatto">
+		</div><br>
+		<div>
+			<input name="data Inserimento" th:field="*{dataInserimento}" placeholder="email Contatto" type="date">
+		</div><br>
+		<div>
+			<input name="data Ultimo Contatto" th:field="*{dataUltimoContatto}" placeholder="email Contatto" type="date">
+		</div><br>
+		
+		<div>
+			<input name="email Contatto" th:field="*{emailContatto}" placeholder="email Contatto">
+		</div><br>
+		<div>
+			<input name="fatturato Annuale" th:field="*{fatturatoAnnuale}" placeholder="fatturato Annuale">
+		</div><br>
+		
+		<div th:object="${indirizzo}" th:field="$*{indirizzoSedeOperativa}">
+		<div>
+			<input name="indirizzoSedeOperativa.via" th:field="*{via}" placeholder="via della sede operativa">
+		</div><br>
+		<div>
+			<input name="indirizzoSedeOperativa.civico" th:field="*{civico}" placeholder="civico della sede operativa">
+		</div><br>
+		<div>
+			<input name="indirizzoSedeOperativa.cap" th:field="*{cap}" placeholder="cap della sede operativa">
+		</div><br>
+		<div>
+			<input name="indirizzoSedeOperativa.localita" th:field="*{localita}" placeholder="localita della sede operativa">
+		</div><br>
+				<div th:object="${comune}" th:field="$*{comune}">
+				<div>
+				<input name="Comunenome" th:field="*{nome}" placeholder="nome del comune  della sede operativa">
+				</div><br>
+				
+				<div th:object="$*{provincia}" th:field="*{provincia}">
+					<div>
+					<input name="Provincianome" th:field="*{nome}" placeholder="Provincia della sede operativa">
+					</div><br>
+					<div>
+					<input name=".Provinciasigla" th:field="*{sigla}" placeholder="sigla della Provincia della sede operativa">
+					</div><br>	
+				</div>
+			</div>
+		</div>
+		<div th:object="${Indirizzo}" th:field="*{indirizzoSedeLegale}">
+		<div>
+			<input name="indirizzoSedeLegale.via" th:field="*{via}" placeholder="via della indirizzo Sede Legale">
+		</div><br>
+		<div>
+			<input name="indirizzoSedeLegale.civico" th:field="*{civico}" placeholder="civico della sede legale">
+		</div><br>
+		<div>
+			<input name="indirizzoSedeLegale.cap" th:field="*{cap}" placeholder="cap della sede legale">
+		</div><br>
+		<div>
+			<input name="indirizzoSedeLegale.localita" th:field="*{localita}" placeholder="localita della sede legale">
+		</div><br>
+				<div th:object="${Comune}" th:field="*{comune}">
+				<div>
+				<input name="Comunenome" th:field="*{nome}" placeholder="nome del comune  della sede legale">
+				</div><br>
+				
+				<div th:object="${Provincia}" th:field="*{provincia}">
+					<div>
+					<input name="Provincianome" th:field="*{nome}" placeholder="Provincia della sede legale">
+					</div><br>
+					<div>
+					<input name=".Provinciasigla" th:field="*{sigla}" placeholder="sigla Provincia della sede legale">
+					</div><br>	
+				</div>
+			</div>
+		</div>
+		
+		
+		<p>Tipo Cliente</p>
+		<div class="form-group">
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio"  name="SRL" class="custom-control-input" value="SRL" th:field="*{tipoCliente}">
+                <label class="custom-control-label" >SRL</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio"  name="SPA" class="custom-control-input" value="SPA" th:field="*{tipoCliente}">
+                <label class="custom-control-label" >SPA</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio"  name="SAS" class="custom-control-input" value="SAS" th:field="*{tipoCliente}">
+                <label class="custom-control-label" >SAS</label>
+            </div>
+        </div>
+			<div class="custom-control custom-radio custom-control-inline">
+                <input type="radio"  name="PA" class="custom-control-input" value="PA" th:field="*{tipoCliente}">
+                <label class="custom-control-label" >PA</label>
+            </div>
+      	<div>
+			<button type="submit">Salva</button>
+		</div>
+	</form>
+</body>
+</body>
+</html>

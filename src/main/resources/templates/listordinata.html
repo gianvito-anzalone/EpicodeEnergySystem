@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		Pagine: <a th:each="i:${#numbers.sequence(0, totalPages-1)}"
+			th:href="@{?pageNumber={n}(n=${i})}"> <span th:text="${i+1}"></span>
+			|
+		</a>
+	</div>
+	<div class="container">
+		<div class="btn btn-primary">
+			<a href="/menu.html">Menu</a>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Nome Cliente</th>
+					<th>Partita iva</th>
+					<th>tipo cliente</th>
+					<th>email</th>
+					<th>pec</th>
+					<th>telefono</th>
+					<th>nome contatto dell azienda</th>
+					<th>cognome contatto</th>
+					<th>telefono Contatto</th>
+					<th>email del contatto</th>
+					<th>data inserimento del contatto</th>
+					<th>data ultimo contatto</th>
+					<th>fatturato annuale</th>
+					<th>Via dell indirizzo Sede Legale</th>
+					<th>Civico Sede Legale</th>
+					<th>CAP Sede Legale</th>
+					<th>Localita Sede Legale</th>
+					<th>Nome del comune Sede Legale</th>
+					<th>Nome della provincia Sede Legale</th>
+					<th>Sigla della provincia Sede Legale</th>
+					<th>Via dell indirizzo Sede operativa</th>
+					<th>Civico Sede operativa </th>
+					<th>CAP  Sede operativa</th>
+					<th>Localita Sede operativa</th>
+					<th>Nome del comune Sede operativa</th>
+					<th>Nome della provincia Sede operativa</th>
+					<th>Sigla della provincia Sede operativa</th>
+				</tr>
+			<tbody>
+				<tr th:each="cliente:${list}">
+					<td th:text="${cliente.ragioneSociale}">
+					<td th:text="${cliente.partitaIva}">
+					<td th:text="${cliente.tipoCliente}">
+					<td th:text="${cliente.email}">
+					<td th:text="${cliente.pec}">
+					<td th:text="${cliente.telefono}">
+					<td th:text="${cliente.nomeContatto}">
+					<td th:text="${cliente.cognomeContatto}">
+					<td th:text="${cliente.telefonoContatto}">
+					<td th:text="${cliente.emailContatto}">
+					<td th:text="${cliente.dataInserimento}">
+					<td th:text="${cliente.dataUltimoContatto}">
+					<td th:text="${cliente.fatturatoAnnuale}">
+					<td th:text="${cliente.indirizzoSedeLegale.via}">
+					<td th:text="${cliente.indirizzoSedeLegale.civico}">
+					<td th:text="${cliente.indirizzoSedeLegale.cap}">
+					<td th:text="${cliente.indirizzoSedeLegale.localita}">
+					<td th:text="${cliente.indirizzoSedeLegale.comune.nome}">
+					<td th:text="${cliente.indirizzoSedeLegale.comune.provincia.nome}">
+					<td th:text="${cliente.indirizzoSedeLegale.comune.provincia.sigla}">
+					<td th:text="${cliente.indirizzoSedeOperativa.via}">
+					<td th:text="${cliente.indirizzoSedeOperativa.civico}">
+					<td th:text="${cliente.indirizzoSedeOperativa.cap}">
+					<td th:text="${cliente.indirizzoSedeOperativa.localita}">
+					<td th:text="${cliente.indirizzoSedeOperativa.comune.nome}">
+					<td th:text="${cliente.indirizzoSedeOperativa.comune.provincia.nome}">
+					<td th:text="${cliente.indirizzoSedeOperativa.comune.provincia.sigla}">
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
